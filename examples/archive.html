@@ -123,7 +123,7 @@
           }
         })
         .catch((error) => {
-          responseText.innerHTML = 'Uh-oh! Something\'s not right with the link provided!'
+          responseText.innerHTML = `Uh-oh! Something's not right with the link provided!`
         })
         .finally(() => {
           bootstrap.Modal.getInstance(welcomeModal).hide();
