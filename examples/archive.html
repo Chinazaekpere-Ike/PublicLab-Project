@@ -106,7 +106,7 @@
                 let placeButton = document.createElement('a');
 
                 placeButton.classList.add('btn', 'btn-sm', 'btn-outline-secondary', 'place-button');
-                placeButton.innerHTML = 'Place on map';
+                placeButton.innerHTML = `Place on map`;
 
                 image.src = `${url.replace('metadata', 'download')}/${file.name}`;
 
@@ -117,9 +117,9 @@
                 imageCount++;
               }
             });
-            responseText.innerHTML = imageCount ? `${imageCount} image(s) fetched successfully.` : 'No images found in the link provided...'
+            responseText.innerHTML = imageCount ? `${imageCount} image(s) fetched successfully.` : `No images found in the link provided...`
           } else {
-            responseText.innerHTML = 'No images found in the link provided...'
+            responseText.innerHTML = `No images found in the link provided...`
           }
         })
         .catch((error) => {
