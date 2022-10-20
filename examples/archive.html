@@ -109,12 +109,23 @@
                 fetchedFromUrl = document.createElement('a');
                 fetchedFromUrl.setAttribute('href', input.value);
                 fetchedFromUrl.setAttribute('target', '_blank');
+                
+                let characterNum = 28;
+                let imageName = input;
+                imageName = imageName.value.slice (characterNum);
+                imageName = imageName.replaceAll('-', ' ');
+                let capLetter = imageName.charAt(0).toUpperCase() + imageName.slice(1);
+                
                 fetchedFromUrl.innerHTML = 'this Internet Archive Collection';
                 fetchedFrom.appendChild(fetchedFromUrl)
 
                 placeButton.classList.add('btn', 'btn-sm', 'btn-outline-secondary', 'place-button');
                 placeButton.innerHTML = 'Place on map ';
 
+                let imageTitle = document.createElement ('div');
+                imageTitle.classList.add ('mb-4')
+                imageTitle.innerHTML = capLetter;
+                
                 placeButton.addEventListener('click', (event) => {
                   if(!placeButton.getElementsByClassName('fa-spinner')[0]){
                     const spinner = document.createElement('i')
@@ -139,6 +150,7 @@
                 imageRow.append(image, placeButton);
 
                 imageContainer.appendChild(imageRow);
+                imageContainer.appendChild(imageTitle);
                 imageCount++;
               }
             });
